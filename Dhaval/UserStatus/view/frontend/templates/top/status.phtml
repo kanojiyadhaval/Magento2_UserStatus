@@ -1,0 +1,3 @@
+<?php if($block->isCustomerLoggedIn()) { ?>
+<li><span><?= __('Status:'); ?>&nbsp;<?= __($block->statusOptions->getOptionText($block->getStatusValue())); ?></span></li>
+<?php } ?>

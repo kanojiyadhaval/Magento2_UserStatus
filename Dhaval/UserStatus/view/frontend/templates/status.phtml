@@ -1,0 +1,28 @@
+<?php 
+$block->getStatusValue();
+?>
+<div class="block status">
+    <div class="content">
+        <form class="form subscribe"
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            id="mystatus-validate-detail">
+            <div class="field status">
+                <div class="control">
+                    <select id="status" name="user_status">
+                    <?php foreach($block->getStatusOptions() as $option){ ?>
+                    <option value="<?php echo $option['value']; ?>" <?php echo ($block->getStatusValue() == $option['value'])?"selected":"" ?>>
+                        <?php echo __($option['label']); ?>
+                    </option>
+                    <?php } ?>
+                    </select>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary" title="<?= $block->escapeHtmlAttr(__('Save')) ?>" type="submit">
+                    <span><?= $block->escapeHtml(__('Save')) ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
